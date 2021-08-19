@@ -13,12 +13,15 @@ import (
 
 func Startsever() {
 	App := mux.NewRouter()
-	err := godotenv.Load(".env")
+	//err := godotenv.Load(".env")
 
 	if err != nil {
 		log.Fatalf("Error loading .env file")
 	}
-	port := os.Getenv("SERVER_PORT")
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "80" // Default port if not specified
+	}
 	fmt.Println("Starting Server at", port)
 	defer http.ListenAndServe(port, App)
 	fmt.Println("Server Started")
