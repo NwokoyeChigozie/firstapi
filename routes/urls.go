@@ -2,16 +2,25 @@ package routes
 
 import (
 	"fmt"
+	"log"
 	"net/http"
+	"os"
 
 	"github.com/gorilla/mux"
 	"github.com/gregoflash05/firstapi/views"
+	"github.com/joho/godotenv"
 )
 
 func Startsever() {
 	App := mux.NewRouter()
-	fmt.Println("Starting Server")
-	defer http.ListenAndServe(":1234", App)
+	err := godotenv.Load(".env")
+
+	if err != nil {
+		log.Fatalf("Error loading .env file")
+	}
+	port := os.Getenv("SERVER_PORT")
+	fmt.Println("Starting Server at", port)
+	defer http.ListenAndServe(port, App)
 	fmt.Println("Server Started")
 
 	App.HandleFunc("/", views.Helloworld).Methods("GET")
