@@ -20,7 +20,7 @@ func Startsever() {
 	//}
 	port := os.Getenv("PORT")
 	if port == "" {
-		port = "80" // Default port if not specified
+		port = ":8080" // Default port if not specified
 	}
 	fmt.Println("Starting Server at", port)
 	defer http.ListenAndServe(port, App)
