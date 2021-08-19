@@ -2,13 +2,13 @@ package routes
 
 import (
 	"fmt"
-	"log"
+	// "log"
 	"net/http"
 	"os"
 
 	"github.com/gorilla/mux"
 	"github.com/gregoflash05/firstapi/views"
-	"github.com/joho/godotenv"
+	// "github.com/joho/godotenv"
 )
 
 func Startsever() {
