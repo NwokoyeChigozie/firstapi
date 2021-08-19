@@ -15,9 +15,9 @@ func Startsever() {
 	App := mux.NewRouter()
 	//err := godotenv.Load(".env")
 
-	if err != nil {
-		log.Fatalf("Error loading .env file")
-	}
+	//if err != nil {
+	//	log.Fatalf("Error loading .env file")
+	//}
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "80" // Default port if not specified
