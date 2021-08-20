@@ -13,5 +13,5 @@ func Contact(response http.ResponseWriter, request *http.Request) {
 	// json.NewEncoder(response).Encode(request)
 	frmname := request.PostFormValue("name")
 	json.NewEncoder(response).Encode(frmname)
-	fmt.Println(frmname)
+	fmt.Println("<div class'alert alert sucess text-center'> " + frmname + "</div>")
 }
