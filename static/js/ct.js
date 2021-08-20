@@ -28,8 +28,8 @@ $.ajax({
 
     type: "POST",
     url: window.location.protocol + "//" + window.location.host +"/contact",
-    //contentType: "application/json",
-    //dataType: "json",
+    contentType: "application/json",
+    dataType: "json",
     data: {       
         // csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
                   name : name,
