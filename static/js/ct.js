@@ -24,18 +24,15 @@
 	}else{
 		//console.log("email: " + email + " name: " + name+" message: "+ message +" csrf: "+ document.getElementsByName('csrfmiddlewaretoken')[0].value)
        $(".error_message").html("<p style='' class='alert alert-primary text-center'>Please wait...</p>");
+       var postData="name\="+ name+"&email\="+email+"&message\="+message;
 $.ajax({
 
     type: "POST",
     url: window.location.protocol + "//" + window.location.host +"/contact",
-    contentType: "application/json",
-    dataType: "json",
-    data: JSON.stringify({       
-        // csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
-                  name : name,
-				  email : email,
-                  message : message
-    }),
+    // contentType: "application/json",
+    // dataType: "json",
+    dataType: 'text',
+    data: postData,
     success: function(response) {
 $(".error_message").html(response);
 //console.log(response);
