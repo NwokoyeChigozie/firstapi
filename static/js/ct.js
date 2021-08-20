@@ -42,6 +42,7 @@ $(".error_message").html(response);
         
     },
     error: function(response) {
+        console.log(response)
  $(".error_message").html("<p class='alert alert-danger text-center' style='text-align:center'>An error occured<p>");
      }      
             });
