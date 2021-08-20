@@ -30,12 +30,12 @@ $.ajax({
     url: window.location.protocol + "//" + window.location.host +"/contact",
     contentType: "application/json",
     dataType: "json",
-    data: {       
+    data: JSON.stringify({       
         // csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
                   name : name,
 				  email : email,
                   message : message
-    },
+    }),
     success: function(response) {
 $(".error_message").html(response);
 //console.log(response);
